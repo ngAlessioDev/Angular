@@ -1,0 +1,123 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.contenitore {
+  width: 60%;
+  margin: auto;
+}
+
+.verde {
+  color: green;
+}
+
+.rosso {
+  color: red;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  /* border: 1px solid; */
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+table th, td {
+  /* border: 1px solid; */
+  text-align: center;
+  padding: 1em;
+}
+
+table thead th:nth-child(1){
+  width: 5%;
+}
+table thead th:nth-child(2){
+  width: 20%;
+}
+table thead th:nth-child(3){
+  width: 20%;
+}
+table thead th:nth-child(4){
+  width: 30%;
+}
+table thead th:nth-child(5){
+  width: 10%;
+}
+table thead th:nth-child(6){
+  width: 15%;
+}
+
+
+
+table tbody tr:nth-child(2n + 1) td {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.bottoni-tab img:nth-child(1) {
+  margin-right: 0.5em;
+}
+
+
+.bottoni-tab img:hover {
+  cursor: pointer;
+}
+
+table tfoot td {
+  width: 20%;
+}
+
+
+form {
+  width: 40%;
+
+}
+
+.form-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-sin {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-des {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 1em;
+}
+
+input, select {
+  margin-top: 0.5em;
+}
+
+.bottoni-form {
+  margin-top: 2em;
+  display: flex;
+}
+
+ .bottoni-form button:nth-of-type(1) {
+  margin-right: 0.5em;
+}
+
+.bottoni-form button {
+  padding: 0.4em 0.8em;
+  border: 1px solid gray;
+  border-radius: 0.5em;
+  background: cornflowerblue;
+  color: white;
+  box-shadow: 2px 2px 3px 0.5px gray;
+}
+
+.bottoni-form button:hover {
+  cursor: pointer;
+}
+
+
+

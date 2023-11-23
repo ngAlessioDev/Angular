@@ -1,0 +1,86 @@
+<h1>Gestione Entrate / Uscite</h1>
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Data</th>
+      <th>Tipo</th>
+      <th>Descrizione</th>
+      <th>Importo(€)</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let m of movimenti">
+      <td>{{ movimenti.indexOf(m) + 1 }}</td>
+      <td>{{ m.data }}</td>
+      <td [ngClass]="{ verde: m.tipo == 'ENTRATA', rosso: m.tipo == 'USCITA' }">
+        {{ m.tipo }}
+      </td>
+      <td>{{ m.descrizione }}</td>
+      <td [ngClass]="{ verde: m.tipo == 'ENTRATA', rosso: m.tipo == 'USCITA' }">
+        {{ m.importo | currency : "EUR" }}
+      </td>
+      <td class="bottoni-tab">
+        <img
+          src="../../assets/images/pen-to-square-svgrepo-com.svg"
+          (click)="modificaR(m)"
+        />
+        <img
+          src="../../assets/images/bin-svgrepo-com.svg"
+          (click)="eliminaR(m)"
+        />
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>
+        <span>Saldo: </span><span>{{ totale | currency : "EUR" }}</span>
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+<hr />
+
+<form (ngSubmit)="aggiungiR()">
+  <div class="form-flex">
+    <div class="form-sin">
+      <label for="data">Data</label>
+      <input type="date" id="data" name="data" [(ngModel)]="movimento.data" />
+
+      <label for="descrizione">Descrizione</label>
+      <input
+        type="text"
+        id="descrizione"
+        name="descrizione"
+        [(ngModel)]="movimento.descrizione"
+      />
+    </div>
+
+    <div class="form-des">
+      <label for="tipo">Tipo</label>
+      <select name="tipo" id="tipo" [(ngModel)]="movimento.tipo">
+        <option value="entrata">ENTRATA</option>
+        <option value="uscita">USCITA</option>
+      </select>
+
+      <label for="importo">Importo</label>
+      <input
+        type="number"
+        id="importo"
+        name="importo"
+        [(ngModel)]="movimento.importo"
+      />
+    </div>
+  </div>
+  <div class="bottoni-form">
+    <button *ngIf="!isAddDisabled" [disabled]="isAddDisabled" type="submit">
+      Aggiungi
+    </button>
+    <button *ngIf="!isModDisabled" [disabled]="isModDisabled" type="submit">
+      Salva
+    </button>
+  </div>
+</form>

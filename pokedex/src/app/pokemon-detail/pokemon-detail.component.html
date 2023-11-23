@@ -1,0 +1,30 @@
+<div class="detail-container">
+  <img src="{{ dettaglioP?.images?.small }}" />
+  <table>
+    <tr class="top-icon">
+      <app-pokemon-type-icon *ngFor="let t of dettaglioP?.types" [type]="t"></app-pokemon-type-icon>
+    </tr>
+    <tr>
+      <th>Name:</th>
+      <td>{{ dettaglioP?.name }}</td>
+    </tr>
+    <tr>
+      <th>Supertype:</th>
+      <td>{{ dettaglioP?.supertype }}</td>
+    </tr>
+   <tr>
+    <th>Hp:</th>
+    <td>{{ dettaglioP?.hp }}</td>
+   </tr>
+   <tr>
+    <th>Subtypes:</th>
+    <td *ngFor="let s of dettaglioP?.subtypes">{{s}}</td>
+   </tr>
+   <tr>
+    <th>Types:</th>
+    <td>{{dettaglioP?.types}}</td>
+   </tr>
+  </table>
+</div>
+
+<app-pokemon-attack [attacco]="dettaglioP?.attacks" ></app-pokemon-attack>

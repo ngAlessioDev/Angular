@@ -1,0 +1,18 @@
+<div class="card">
+  <div>
+    <img src="{{ pokemon?.images?.small }}" />
+  </div>
+
+  <div>
+    <h1>{{ pokemon?.name }}</h1>
+    <p>{{ pokemon?.types }}</p>
+    <!-- <p>{{ pokemon?.hp }}</p>
+    <p>{{ pokemon?.level }}</p>
+    <p>{{ pokemon?.rarity }}</p> -->
+  </div>
+
+
+  <a routerLink="/pokemon/{{pokemon?.id}}">Dettagli</a>
+  <button (click)="aggiungiPreferiti()">Aggiungi ai preferiti</button>
+  <button  *ngIf="deleteMode">Elimina</button>
+</div>

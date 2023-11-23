@@ -1,0 +1,27 @@
+<div class="attack-container">
+  <div class="attacco" *ngFor="let a of attacco">
+    <div class="attack-icon">
+      <app-pokemon-type-icon
+        *ngFor="let t of a.cost"
+        [type]="t"
+      ></app-pokemon-type-icon>
+    </div>
+    <p>Attack: {{ a.name }}</p>
+
+    <p>Damage: {{ a.damage == "" ? "-" : a.damage }}</p>
+    <p>"{{ a.text }}"</p>
+    <p>Converted energy cost: {{ a.convertedEnergyCost }}</p>
+    <p>Cost:</p>
+    <div *ngFor="let c of a.cost">
+      <div>
+        <p>{{ c }}</p>
+        <div class="attack-icon">
+          <app-pokemon-type-icon
+            *ngFor="let t of a.cost"
+            [type]="t"
+          ></app-pokemon-type-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

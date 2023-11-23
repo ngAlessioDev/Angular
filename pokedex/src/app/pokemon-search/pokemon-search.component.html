@@ -1,0 +1,10 @@
+
+<div class="input-container">
+  <input type="search" placeholder="Cerca un pokemon" [(ngModel)]="usr_input">
+  <button type="button" (click)="cerca()">Cerca</button>
+
+  <div class="card-container">
+    <app-pokemon-preview *ngFor="let p of pokeResponse?.data" [pokemon]="p"></app-pokemon-preview>
+  </div>
+</div>
+

@@ -1,0 +1,9 @@
+.nome-pizza-dettaglio {
+  width: fit-content;
+}
+
+.nome-pizza-dettaglio:hover {
+  cursor: pointer;
+  border-bottom: 2px solid green;
+}
+

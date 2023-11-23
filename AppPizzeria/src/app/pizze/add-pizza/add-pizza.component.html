@@ -1,0 +1,40 @@
+<h3>Aggiungi pizza</h3>
+
+
+<div class="mb-3 col-8">
+  <label for="nome" class="form-label">Nome</label>
+  <input type="text" id="nome" class="form-control" [(ngModel)]="nomePizza">
+</div>
+<div class="mb-3 col-8">
+  <label for="prezzo" class="form-label">Prezzo</label>
+  <input type="number" id="prezzo" class="form-control" [(ngModel)]="prezzoPizza">
+</div>
+<div class="mb-3 col-8">
+  <label for="ingredienti" class="form-label">Ingredienti</label>
+  <input type="text" id="ingredienti" class="form-control" [(ngModel)]="stringaIngredienti" placeholder="Inserisci ingredienti separati da virgola">
+</div>
+<div class="mb-3 col-8">
+  <label for="pizzaiolo" class="form-label">Pizzaiolo</label>
+  <input type="text" id="pizzaiolo" class="form-control" [(ngModel)]="pizzaiolo">
+</div>
+<div class="mb-3 col-8">
+  <label for="immagine" class="form-label">Immagine</label>
+  <input type="text" id="immagine" class="form-control" [(ngModel)]="immagine" placeholder="Inserisci il link di un'immagine">
+</div>
+
+<button type="button" class="btn btn-primary" (click)="onAddPizza()">Aggiungi</button>
+
+<div class="mt-3" *ngIf="pizza; else noPizza">
+  <h4>Nuova pizza aggiunta</h4>
+
+  <p>Nome: {{pizza.nome}}</p>
+  <p>Prezzo: {{pizza.prezzo | currency: 'EUR'}}</p>
+  <p>Ingredienti:</p>
+  <ul>
+    <li *ngFor="let i of pizza.ingredienti">{{i.nome}}</li>
+  </ul>
+  <p>Pizzaiolo: {{pizza.pizzaiolo}}</p>
+</div>
+<ng-template #noPizza>
+  <p>Non hai ancora inserito una pizza</p>
+</ng-template>

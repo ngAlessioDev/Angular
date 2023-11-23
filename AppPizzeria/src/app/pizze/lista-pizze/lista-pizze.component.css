@@ -1,0 +1,15 @@
+#carrello {
+  background: url(../../../assets/img/cart.svg) no-repeat rgb(13, 110, 253 );
+  background-position: 0.7em;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 80%;
+  margin: 1em auto;
+  padding: 0.8em;
+  text-align: center;
+}
+
+.sottolineato {
+  text-decoration: underline;
+}

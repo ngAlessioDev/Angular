@@ -1,0 +1,15 @@
+<!-- <div class="row">
+  <div class="col-12">
+    <ul *ngFor="let prodotto of listaCarrello">
+      <li>{{prodotto.nome}} - {{prodotto.prezzo | currency:'EUR'}}</li>
+    </ul>
+  </div>
+</div> -->
+<div>
+  <h3>Carrello</h3>
+  <ul class="list-group" *ngFor="let prodotto of listaCarrello">
+    <li class="list-group-item">{{prodotto.nome}} - {{prodotto.prezzo | currency:'EUR'}}
+      <img class="carrello-cestino" src="../../assets/img/trash-fill.svg" (click)="cancellaProd(prodotto)">
+    </li>
+  </ul>
+</div>

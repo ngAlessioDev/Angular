@@ -1,0 +1,20 @@
+.nav-carrello {
+  width: 5%;
+  border-radius: 2em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgb(13, 110, 253 );
+
+}
+
+.nav-carrello:hover {
+  cursor: pointer;
+}
+
+.nav-carrello a, span {
+  color: white;
+}
+
+
+

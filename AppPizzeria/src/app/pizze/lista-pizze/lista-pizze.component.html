@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-6">
+    <h2>Lista pizze</h2>
+    <app-pizza *ngFor="let pizza of listaPizze" [pizza]="pizza" (pizzaDettagli)="dettaglioPizza($event)"></app-pizza>
+  </div>
+
+  <div class="col-6 mb-5" *ngIf="pizzaDettaglio != null">
+    <div class="card">
+      <img class="card-img-top" src="{{pizzaDettaglio.immagine}}" alt="Immagine pizza">
+      <div class="card-body">
+        <h4 class="card-title">{{pizzaDettaglio.nome}}</h4>
+        <p class="card-text">Prezzo: {{pizzaDettaglio.prezzo | currency: 'EUR'}}</p>
+        <p class="card-text">Ingredienti:</p>
+        <ul>
+          <li *ngFor="let ing of pizzaDettaglio.ingredienti">
+            <span [ngClass]="{'sottolineato': !ingredientiBase.includes(ing.nome)}">{{ing.nome}}</span>
+            <button class="btn btn-primary p-1 m-lg-2" *ngIf="!ingredientiBase.includes(ing.nome)" (click)="aggiungiIng(ing.nome)">+</button>
+          </li>
+        </ul>
+        <p>Pizzaiolo: {{pizzaDettaglio.pizzaiolo.nome}}</p>
+      </div>
+      <button type="button" id="carrello"  (click)="compraPizza(pizzaDettaglio)">Aggiungi al carrello</button>
+
+    </div>
+  </div>
+  <app-carrello class="col-12"></app-carrello>
+</div>
+
+
+
+
+<!-- class="col-4 m-3 btn btn-primary"  -->

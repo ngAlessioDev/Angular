@@ -1,0 +1,4 @@
+<h1>Totale album: {{album.length}}</h1>
+<div class="d-flex flex-row flex-wrap gap-3">
+  <app-album-detail *ngFor="let a of album" [album]="a"></app-album-detail>
+</div>

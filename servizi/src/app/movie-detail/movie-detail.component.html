@@ -1,0 +1,16 @@
+<div *ngIf="dettaglioFilm">
+  <div *ngIf="dettaglioFilm.Response == 'True'">
+  <h5>Titolo: {{dettaglioFilm.Title}}</h5>
+  <p>Anno: {{dettaglioFilm.Year}}</p>
+  <p>Genere: {{dettaglioFilm.Genre}}</p>
+  <p>Regista: {{dettaglioFilm.Director}}</p>
+  <p>Sceneggiatore: {{dettaglioFilm.Writer}}</p>
+  <p>Attori: {{dettaglioFilm.Actors}}</p>
+  <app-rating *ngFor="let r of dettaglioFilm.Ratings" [rating]="r"></app-rating>
+</div>
+</div>
+<div *ngIf="dettaglioFilm?.Response == 'False'" class="text-bg-danger">
+  Film non caricato
+
+
+</div>

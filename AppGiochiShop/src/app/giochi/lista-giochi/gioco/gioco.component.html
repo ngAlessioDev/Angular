@@ -1,0 +1,13 @@
+ <!-- Questa sotto è la porzione di codice da ciclare con i giochi -->
+<!--  <div class="col-6"> -->
+  <div class="card" [ngClass]="{'bg-warning': gioco.tipo == 'da tavolo', 'bg-primary bg-darken-sm': gioco.tipo == 'videogame', 'bg-success': gioco.tipo == 'online'}">
+    <img class="card-img-top" src={{gioco.immagine}} alt="Immagine gioco">
+    <div class="card-body">
+      <h3 class="card-title">{{gioco.nome}}</h3>
+      <p class="card-text">Tipo: {{gioco.tipo}}</p>
+      <p class="card-text">Voto: {{gioco.voto}}/10</p>
+      <img id="like" class="me-3" src="../../../../assets/img/like-svgrepo-com-2.svg" *ngIf="gioco.voto >= 0 && gioco.voto <= 9" (click)="like()">
+      <img id="dislike" src="../../../../assets/img/dislike-svgrepo-com.svg" (click)="dislike()" *ngIf="gioco.voto >= 1">
+    </div>
+  </div>
+<!-- </div> -->

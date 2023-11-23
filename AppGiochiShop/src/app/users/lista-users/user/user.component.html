@@ -1,0 +1,5 @@
+<p>Id: {{user.id}} - Nome: {{user.nome}}
+  <span *ngIf="user.ruolo; else noRole"> - Ruolo: {{user.ruolo}}</span>
+
+  <ng-template #noRole>Non ha ruolo</ng-template>
+</p>

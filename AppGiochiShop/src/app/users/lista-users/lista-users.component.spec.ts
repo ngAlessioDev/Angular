@@ -1,0 +1,21 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { ListaUsersComponent } from './lista-users.component';
+
+describe('ListaUsersComponent', () => {
+  let component: ListaUsersComponent;
+  let fixture: ComponentFixture<ListaUsersComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [ListaUsersComponent]
+    });
+    fixture = TestBed.createComponent(ListaUsersComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

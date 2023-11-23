@@ -1,0 +1,22 @@
+<div class="mb-3">
+  <label for="" class="form-label">Id</label>
+  <input type="number" class="form-control" [(ngModel)]="id">
+</div>
+
+<div class="mb-3">
+  <label for="" class="form-label">Nome</label>
+  <input type="text" class="form-control" [(ngModel)]="nome">
+</div>
+
+  <div class="mb-3">
+    <label for="" class="form-label">Ruolo</label>
+    <select class="form-select form-select-lg" [(ngModel)]="ruolo">
+      <option selected disabled>Seleziona Ruolo</option>
+      <option value="admin">Admin</option>
+      <option value="base">Base</option>
+      <option value="guest">Guest</option>
+    </select>
+  </div>
+
+<button class="mb-3 btn btn-primary" (click)="onAddUser()">Aggiungi</button>
+
